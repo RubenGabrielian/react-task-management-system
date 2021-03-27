@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Styled from 'styled-components';
 
 const HeaderStyled = styled.div`
     background: #0065ff;

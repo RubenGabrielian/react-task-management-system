@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import CartListTop from './CardListTop';
 import CartItem from './CartItem';
+import CartListForm from './CartListForm';
 
 const List = styled.div`
     max-width: 300px;
@@ -9,50 +11,21 @@ const List = styled.div`
     border-radius: 3px;
     margin: 25px 0 0 25px;
     background-color: #ebecf0;
-    .cart-list-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 10px;
-        span {
-            font-weight: bold;
-        }
-        span:last-child {
-            font-size: 19px;
-            cursor: pointer;
-        }
-    }
-    .cart-list-bottom {
-        margin: 10px;
-        button {
-            width: 100%;
-            border: none;
-            padding: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 3px;
-            background: transparent;
-            &:hover {
-                background: #f9f9f9;
-            }
-        }
-    }
 `
 
-function CartList () {
+function CartList({ listItems, setListItem }) {
+
+
+
     return (
         <List>
-            <div className='cart-list-top'>
-                <span>Todo</span>
-                <span>...</span>
+            <CartListTop />
+            <div className="cartList">
+                {listItems.map((item) => {
+                    return <CartItem key={item.id} item={item} />
+                })}
             </div>
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <div className='cart-list-bottom'>
-                <button>+ Add another card</button>
-            </div>
+            <CartListForm setListItem={setListItem} listItems={listItems} />
         </List>
     )
 }

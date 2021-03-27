@@ -13,9 +13,9 @@ const Item = styled.div`
     }
 `
 
-function CartItem () {
+function CartItem ({item}) {
     return (
-        <Item>Cart Itme</Item>
+        <Item>{item.content}</Item>
     )
 }
 
