@@ -22,7 +22,14 @@ function CartList({ listItems, setListItem }) {
             <CartListTop />
             <div className="cartList">
                 {listItems.map((item) => {
-                    return <CartItem key={item.id} item={item} />
+                    return (
+                        <CartItem
+                            key={item.id}
+                            item={item}
+                            setListItem={setListItem}
+                            listItems={listItems}
+                        />
+                    )
                 })}
             </div>
             <CartListForm setListItem={setListItem} listItems={listItems} />
