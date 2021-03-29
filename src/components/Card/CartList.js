@@ -11,11 +11,10 @@ const List = styled.div`
     border-radius: 3px;
     margin: 25px 0 0 25px;
     background-color: #ebecf0;
+    box-shadow:1px 1px 12px -3px rgb(9 30 66 / 25%);
 `
 
 function CartList({ listItems, setListItem }) {
-
-
 
     return (
         <List>
